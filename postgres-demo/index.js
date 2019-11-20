@@ -1,20 +1,23 @@
 'use strict';
 
-const {Client} = require('pg');
+const { Client } = require('pg');
 const client = new Client({
-  user: "postgres",
-  password: "Isco222000",
-  host: "localhost",
+  user: 'postgres',
+  password: 'Isco222000',
+  host: 'localhost',
   port: 5432,
-  database: "initial"
+  database: 'initial'
 });
 
 client.connect()
-  .then(() => console.log('Client connected'))
+  .then(() => console.log({ message: 'Client connected' }))
   .then(() => client.query('SELECT * FROM person'))
   .then(results => console.table(results.rows))
   .catch(err => console.error(err))
-  .finally(() => client.end())
+  .finally(() => {
+    console.log({ message: 'Client disconnected' });
+    client.end();
+  });
 
 /*
 
@@ -27,5 +30,6 @@ const pool = new Pool({
   database: "initial"
 });
 
-pool.query("SELECT * FROM person", (error, result) => { console.table(result.rows)});
+pool.query("SELECT * FROM person",
+(error, result) => { console.table(result.rows)});
 */
