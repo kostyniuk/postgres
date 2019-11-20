@@ -6,12 +6,12 @@ const client = new Client({
   password: 'Isco222000',
   host: 'localhost',
   port: 5432,
-  database: 'initial'
+  database: 'api'
 });
 
 client.connect()
   .then(() => console.log({ message: 'Client connected' }))
-  .then(() => client.query('SELECT * FROM person'))
+  .then(() => client.query('SELECT * FROM users'))
   .then(results => console.table(results.rows))
   .catch(err => console.error(err))
   .finally(() => {
