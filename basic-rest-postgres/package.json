@@ -1,0 +1,29 @@
+{
+  "name": "basic-rest-postgres",
+  "version": "1.0.0",
+  "description": "Basic REST API realization with Node.js, Express, Postgres",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kostyniuk/postgres/.git"
+  },
+  "keywords": [
+    "postgres",
+    "node",
+    "js",
+    "express",
+    "rest",
+    "api",
+    "pg",
+    "sql"
+  ],
+  "author": "Alex Kostyniuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kostyniuk/postgres/issues"
+  },
+  "homepage": "https://github.com/kostyniuk/postgres#readme"
+}
