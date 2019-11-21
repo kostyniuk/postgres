@@ -13,12 +13,11 @@ const userRoute = require('./api/routes/user');
 const app = express();
 
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
 app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+
 
 app.use('/users', userRoute);
 

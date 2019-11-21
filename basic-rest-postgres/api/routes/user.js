@@ -10,6 +10,10 @@ router.get('/', userController.getAll);
 
 router.get('/:id', userController.getOne);
 
-router.put(':id', userController.changeOne);
+router.put('/:id', userController.changeOne);
+
+router.post('/', userController.addOne);
+
+router.delete('/:id', userController.deleteOne);
 
 module.exports = router;
